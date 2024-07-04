@@ -9,301 +9,313 @@
     <title>GROW UP - 온라인 학습 플랫폼</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #88a376;
-            --secondary-color: #6c757d;
-            --light-color: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
-        }
-        
-        .navbar-brand {
-            color: #13547a;
-            font-weight: bold;
-        }
-        
-        .nav-link {
-            color: var(--secondary-color);
-        }
-        
-        /* .hero-section {
-           	background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-            color: white;
-            padding: 60px 0;
-            height: 500px;
-        } */
-        
-        .search-bar {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .category-card, .course-card {
-            transition: transform 0.3s;
-        }
-        
-        .category-card:hover, .course-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        .py-4 {
-        	width: 50%;
-        	background-color : #13547a;
-        	align-content: center;
-        	margin: 0 auto;
-        	border-radius: 10px;
-        }
-        
-        .notice-roll {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="${ctp}/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="http://localhost:9090/javaclassS13/">GROW UP</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item" style="border: solid 1px #000; border-radius: 5px;"><a class="nav-link" href="#">강좌<span class="navbar-toggler-icon"></span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">강좌찾기</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">이용안내</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+		<jsp:include page="/WEB-INF/views/include/nav.jsp" />
+		 	
     <section class="hero-section">
-       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-			  <div class="carousel-indicators">
-			    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			  </div>
-			  <div class="carousel-inner">
-			    <div class="carousel-item active" data-bs-interval="10000">
-			      <img src="${ctp}/images/webfront1.jpg" class="d-block w-100" alt="..." style="width: 600px;">
-			      <div class="carousel-caption d-none d-md-block">
-			        <h5>First slide label</h5>
-			        <p>Some representative placeholder content for the first slide.</p>
-			      </div>
-			    </div>
-			    <div class="carousel-item" data-bs-interval="2000">
-			      <img src="${ctp}/images/webfront1.jpg" class="d-block w-100" alt="...">
-			      <div class="carousel-caption d-none d-md-block">
-			        <h5>Second slide label</h5>
-			        <p>Some representative placeholder content for the second slide.</p>
-			      </div>
-			    </div>
-			    <div class="carousel-item">
-			      <img src="${ctp}/images/webfront1.jpg" class="d-block w-100" alt="...">
-			      <div class="carousel-caption d-none d-md-block">
-			        <h5>Third slide label</h5>
-			        <p>Some representative placeholder content for the third slide.</p>
-			      </div>
-			    </div>
-			  </div>
-			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			    <span class="visually-hidden">Previous</span>
-			  </button>
-			  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			    <span class="visually-hidden">Next</span>
-			  </button>
-			</div>
-    </section>
+		    <div class="container">
+		        <div class="swiper-container">
+		            <div class="swiper-wrapper">
+		                <div class="swiper-slide">
+		                	<div class="slide-content">
+		                    <div class="carousel-content">
+		                        <h2>전문가와 함께 성장하세요</h2>
+		                        <p>각 분야 최고의 전문가들이 여러분의 성장을 돕습니다.</p>
+		                        <a href="#" class="btn btn-primary" style="background-color: #13547a">강사진 보기</a>
+		                    </div>
+		                    <div class="carousel-image">
+		                        <img src="${ctp}/images/mainFinal1.png" alt="Expert Growth">
+		                    </div>
+		                   </div>
+		                </div>
+		                <div class="swiper-slide">
+		                <div class="slide-content">
+		                    <div class="carousel-content">
+		                        <h2>함께 배우는 즐거움</h2>
+		                        <p>GROW UP 커뮤니티에서 다양한 사람들과 교류하며 배움을 나누세요.</p>
+		                        <a href="#" class="btn btn-primary" style="background-color: #13547a">커뮤니티 참여하기</a>
+		                    </div>
+		                    <div class="carousel-image">
+		                        <img src="${ctp}/images/mainImage1.png" alt="Community Learning">
+		                    </div>
+		                    </div>
+		                </div>
+		                <div class="swiper-slide">
+		                <div class="slide-content">
+		                    <div class="carousel-content">
+		                        <h2>전문가와 함께 성장하세요</h2>
+		                        <p>각 분야 최고의 전문가들이 여러분의 성장을 돕습니다.</p>
+		                        <a href="#" class="btn btn-primary btn-lg" style="background-color: #13547a">강사진 보기</a>
+		                    </div>
+		                    <div class="carousel-image">
+		                        <img src="${ctp}/images/mainFinal1.png" alt="Expert Instructors">
+		                    </div>
+		                    </div>
+		                </div>
+		                <div class="swiper-slide">
+		                <div class="slide-content">
+		                    <div class="carousel-content">
+		                        <h2>함께 배우는 즐거움</h2>
+		                        <p>GROW UP 커뮤니티에서 다양한 사람들과 교류하며 배움을 나누세요.</p>
+		                        <a href="#" class="btn btn-primary btn-lg" style="background-color: #13547a">커뮤니티 참여하기</a>
+		                    </div>
+		                    <div class="carousel-image">
+		                        <img src="${ctp}/images/mainFinal1.png" alt="Community Learning">
+		                    </div>
+		                </div>
+		                
+		            </div>
+				        </div>
+				       <div class="swiper-controls">
+						    <button class="swiper-button-prev">&lt;</button>
+						    <div class="swiper-pagination"></div>
+						    <button class="swiper-button-next">&gt;</button>
+						</div>
+				    </div>
+				    </div>
+				</section>
     
-    <section class="notice-section">
-        <div class="container">
-            <table class="table table-">
-                <tr>
-                    <td rowspan="2" class="text-center">공지사항</td>
-                    <td rowspan="2" class="text-left">1. 공지사항</td>
-                    <td><button id="toggleButton" class="text-left">△</button></td>
-                </tr>  
-                <tr>
-                    <td><button id="changeButton" class="text-left">▽</button></td>
-                </tr>
-            </table>
-        </div>
-    </section>
-    
-    <section class="search-section py-4">
-        <div class="container text-center">
-            <div class="search-bar">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="배우고 싶은 주제를 검색하세요">
-                    <button class="btn btn-light" type="button">검색</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="search-section py-8">
+		    <div class="container text-center">
+		        <h2 class="search-title mb-4">원하는 강좌를 찾아보세요</h2>
+		        <div class="search-bar">
+		            <div class="input-group">
+		                <input type="text" class="form-control search-input" placeholder="배우고 싶은 주제를 검색하세요">
+		                <button class="btn btn-search" type="button">
+		                    <i class="fas fa-search"></i>
+		                </button>
+		            </div>
+		        </div>
+		        <div class="search-tags mt-3">
+		            <span class="search-tag">#프로그래밍</span>
+		            <span class="search-tag">#디자인</span>
+		            <span class="search-tag">#마케팅</span>
+		            <span class="search-tag">#외국어</span>
+		        </div>
+		    </div>
+		</section>
 		
-		<section class="course-section py-5 bg-light">
-      <div class="container">
-          <h2 class="text-center mb-4">Grow Up에서 추천하는 강좌입니다.</h2>
-          <div class="row">
-              <div class="col-md-4 mb-4">
-                  <div class="card course-card">
-                      <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                      <div class="card-body">
-                          <h5 class="card-title">파이썬 기초부터 실전까지</h5>
-                          <p class="card-text">프로그래밍의 기본을 배우고 실제 프로젝트에 적용해봅니다.</p>
-                          <a href="#" class="btn btn-primary">자세히 보기</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                  <div class="card course-card">
-                      <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                      <div class="card-body">
-                          <h5 class="card-title">데이터 분석 입문</h5>
-                          <p class="card-text">데이터 분석의 기초와 실무에서의 활용법을 배웁니다.</p>
-                          <a href="#" class="btn btn-primary">자세히 보기</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                  <div class="card course-card">
-                      <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                      <div class="card-body">
-                          <h5 class="card-title">웹 개발 마스터 과정</h5>
-                          <p class="card-text">HTML, CSS, JavaScript부터 백엔드 개발까지 총망라합니다.</p>
-                          <a href="#" class="btn btn-primary">자세히 보기</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+   	<section class="category-section py-5">
+		    <div class="container">
+		        <h2 class="text-center mb-5">인기 카테고리</h2>
+		        <div class="row">
+		            <div class="col-md-3 mb-4">
+		                <div class="category-card">
+		                    <div class="category-icon">
+		                        <i class="fas fa-code"></i>
+		                    </div>
+		                    <h3>프로그래밍</h3>
+		                    <ul class="course-list">
+		                        <li>
+		                            <a href="#">
+		                                <img src="${ctp}/images/web-dev.jpg" alt="웹 개발 기초" class="img-fluid">
+		                                <div class="course-info">
+		                                    <h5>웹 개발 기초</h5>
+		                                    <p>HTML, CSS, JavaScript</p>
+		                                </div>
+		                            </a>
+		                        </li>
+		                        <li>
+		                            <a href="#">
+		                                <img src="${ctp}/images/python.jpg" alt="파이썬 기초" class="img-fluid">
+		                                <div class="course-info">
+		                                    <h5>파이썬 기초</h5>
+		                                    <p>파이썬 프로그래밍 입문</p>
+		                                </div>
+		                            </a>
+		                        </li>
+		                    </ul>
+		                    <a href="#" class="btn btn-outline-primary mt-3">더 보기</a>
+		                </div>
+		            </div>
+		            <div class="col-md-3 mb-4">
+		                <div class="category-card">
+		                    <div class="category-icon">
+		                        <i class="fas fa-palette"></i>
+		                    </div>
+		                    <h3>디자인</h3>
+		                    <ul class="course-list">
+		                        <li>
+		                            <a href="#">
+		                                <img src="${ctp}/images/ui-ux.jpg" alt="UI/UX 디자인" class="img-fluid">
+		                                <div class="course-info">
+		                                    <h5>UI/UX 디자인</h5>
+		                                    <p>사용자 중심 디자인</p>
+		                                </div>
+		                            </a>
+		                        </li>
+		                        <li>
+		                            <a href="#">
+		                                <img src="${ctp}/images/graphic-design.jpg" alt="그래픽 디자인" class="img-fluid">
+		                                <div class="course-info">
+		                                    <h5>그래픽 디자인</h5>
+		                                    <p>시각 디자인의 기초</p>
+		                                </div>
+		                            </a>
+		                        </li>
+		                    </ul>
+		                    <a href="#" class="btn btn-outline-primary mt-3">더 보기</a>
+		                </div>
+		            </div>
+		            <!-- 나머지 두 카테고리도 같은 구조로 추가 -->
+		        </div>
+		    </div>
+		</section>
+
 		
-    <section class="category-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">인기 카테고리</h2>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="card category-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-laptop-code fa-3x mb-3" style="color: var(--primary-color);"></i>
-                            <h5 class="card-title">IT/프로그래밍</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card category-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--primary-color);"></i>
-                            <h5 class="card-title">경영/경제</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card category-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-language fa-3x mb-3" style="color: var(--primary-color);"></i>
-                            <h5 class="card-title">어학</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card category-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-palette fa-3x mb-3" style="color: var(--primary-color);"></i>
-                            <h5 class="card-title">예술/디자인</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<section class="course-section">
+		    <div class="container">
+		    		<br/><br/>
+		        <h2 class="text-center" style="color: white;">Grow Up에서 추천하는 강좌입니다</h2>
+		        <br/><br/>
+		        <div class="course-slider">
+		            <div class="course-track">
+		                <!-- 강좌 카드 시작 -->
+		                <div class="course-card">
+		                    <img src="web-dev.jpg" alt="웹 개발 기초">
+		                    <div class="course-card-body">
+		                        <h5>웹 개발 기초</h5>
+		                        <p>HTML, CSS, JavaScript를 배워보세요</p>
+		                        <p><small>강사: 김철수</small></p>
+		                        <p><strong>49,000원</strong></p>
+		                    </div>
+		                </div>
+		                <div class="course-card">
+		                    <img src="python.jpg" alt="파이썬 프로그래밍">
+		                    <div class="course-card-body">
+		                        <h5>파이썬 프로그래밍</h5>
+		                        <p>파이썬의 기초부터 고급 개념까지</p>
+		                        <p><small>강사: 이영희</small></p>
+		                        <p><strong>59,000원</strong></p>
+		                    </div>
+		                </div>
+		                <div class="course-card">
+		                    <img src="data-analysis.jpg" alt="데이터 분석 입문">
+		                    <div class="course-card-body">
+		                        <h5>데이터 분석 입문</h5>
+		                        <p>데이터 사이언스의 기본을 배워보세요</p>
+		                        <p><small>강사: 박지성</small></p>
+		                        <p><strong>69,000원</strong></p>
+		                    </div>
+		                </div>
+		                <div class="course-card">
+		                    <img src="app-dev.jpg" alt="앱 개발 마스터">
+		                    <div class="course-card-body">
+		                        <h5>앱 개발 마스터</h5>
+		                        <p>iOS와 Android 앱 개발의 모든 것</p>
+		                        <p><small>강사: 최동훈</small></p>
+		                        <p><strong>79,000원</strong></p>
+		                    </div>
+		                </div>
+		                <div class="course-card">
+		                    <img src="machine-learning.jpg" alt="머신러닝 기초">
+		                    <div class="course-card-body">
+		                        <h5>머신러닝 기초</h5>
+		                        <p>AI와 머신러닝의 핵심 개념 학습</p>
+		                        <p><small>강사: 정수민</small></p>
+		                        <p><strong>89,000원</strong></p>
+		                    </div>
+		                </div>
+		                <!-- 강좌 카드 끝 -->
+		                
+		            </div>
+		        </div>
+		        <br/><br/>
+		    </div>
+		</section>
+		
+		
+				<!-- 새로운 공지사항 및 자주 묻는 질문 섹션 -->
+		<section class="notice-faq-section py-5">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-6">
+		                <div class="notice-wrapper">
+		                    <h5 class="section-title">공지사항</h5>
+		                    <ul class="notice-list">
+		                        <li class="notice-item">
+		                            <a href="#" class="notice-link">
+		                                <span class="notice-category">일반</span>
+		                                <span class="notice-text">2024년 GROW UP 플랫폼 업데이트 안내</span>
+		                                <span class="notice-date">2024.03.15</span>
+		                            </a>
+		                        </li>
+		                        <li class="notice-item">
+		                            <a href="#" class="notice-link">
+		                                <span class="notice-category">이벤트</span>
+		                                <span class="notice-text">신규 강좌 오픈 기념 이벤트 안내</span>
+		                                <span class="notice-date">2024.03.10</span>
+		                            </a>
+		                        </li>
+		                        <li class="notice-item">
+		                            <a href="#" class="notice-link">
+		                                <span class="notice-category">서비스</span>
+		                                <span class="notice-text">GROW UP 모바일 앱 출시 안내</span>
+		                                <span class="notice-date">2024.03.05</span>
+		                            </a>
+		                        </li>
+		                        <li class="notice-item">
+		                            <a href="#" class="notice-link">
+		                                <span class="notice-category">강좌</span>
+		                                <span class="notice-text">여름 특강 수강신청 시작</span>
+		                                <span class="notice-date">2024.03.01</span>
+		                            </a>
+		                        </li>
+		                        <li class="notice-item">
+		                            <a href="#" class="notice-link">
+		                                <span class="notice-category">장학</span>
+		                                <span class="notice-text">2024년 2학기 장학생 모집 공고</span>
+		                                <span class="notice-date">2024.02.28</span>
+		                            </a>
+		                        </li>
+		                    </ul>
+		                    <a href="#" class="btn btn-outline-primary btn-sm mt-3">더보기</a>
+		                </div>
+		            </div>
+		            <div class="col-md-6">
+		                <div class="faq-wrapper">
+		                    <h5 class="faq-title">자주 묻는 질문</h5>
+		                    <div class="accordion" id="faqAccordion">
+		                        <div class="accordion-item">
+		                            <h2 class="accordion-header" id="headingOne">
+		                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		                                    수강 기간은 얼마인가요?
+		                                </button>
+		                            </h2>
+		                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+		                                <div class="accordion-body">
+		                                    대부분의 강좌는 무제한 수강이 가능합니다. 단, 일부 특별 강좌의 경우 기간 제한이 있을 수 있으니 강좌 상세 페이지에서 확인해 주세요.
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="accordion-item">
+		                            <h2 class="accordion-header" id="headingTwo">
+		                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		                                    수료증은 발급되나요?
+		                                </button>
+		                            </h2>
+		                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+		                                <div class="accordion-body">
+		                                    네, 모든 강좌를 완료하시면 수료증을 발급받으실 수 있습니다. 마이페이지에서 수료증 발급이 가능합니다.
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!-- 추가 FAQ 항목들... -->
+		                    </div>
+		                    <a href="#" class="btn btn-outline-primary btn-sm mt-3">더보기</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		
 
-    <section class="course-section py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">추천 강좌</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                        <div class="card-body">
-                            <h5 class="card-title">파이썬 기초부터 실전까지</h5>
-                            <p class="card-text">프로그래밍의 기본을 배우고 실제 프로젝트에 적용해봅니다.</p>
-                            <a href="#" class="btn btn-primary">자세히 보기</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                        <div class="card-body">
-                            <h5 class="card-title">데이터 분석 입문</h5>
-                            <p class="card-text">데이터 분석의 기초와 실무에서의 활용법을 배웁니다.</p>
-                            <a href="#" class="btn btn-primary">자세히 보기</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Course Image">
-                        <div class="card-body">
-                            <h5 class="card-title">웹 개발 마스터 과정</h5>
-                            <p class="card-text">HTML, CSS, JavaScript부터 백엔드 개발까지 총망라합니다.</p>
-                            <a href="#" class="btn btn-primary">자세히 보기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>GROW UP</h5>
-                    <p>당신의 성장을 응원합니다.</p>
-                </div>
-                <div class="col-md-3">
-                    <h5>링크</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">이용약관</a></li>
-                        <li><a href="#" class="text-white">개인정보처리방침</a></li>
-                        <li><a href="#" class="text-white">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>연락처</h5>
-                    <p>
-                        청주시 사창동 148-7 4,5층<br>
-                        그린컴퓨터아트학원 청주캠퍼스<br>
-                        이메일: info@growup.com<br>
-                        전화: 02-123-4567
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <jsp:include page="/WEB-INF/views/include/footer.jsp" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -315,5 +327,97 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const noticeList = document.querySelector('.notice-list');
+        const notices = noticeList.querySelectorAll('.notice-item');
+        
+        // Clone the first two items and append them to the end of the list
+        noticeList.appendChild(notices[0].cloneNode(true));
+        noticeList.appendChild(notices[1].cloneNode(true));
+
+        // Pause animation on hover
+        noticeList.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+
+        noticeList.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.course-track');
+    
+    // 무한 루프를 위해 카드 복제
+    const cards = track.querySelectorAll('.course-card');
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+});
+</script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+	    slidesPerView: 1,
+	    spaceBetween: 200,
+	    loop: true,
+	    autoplay: {
+	        delay: 5000,
+	        disableOnInteraction: false,
+	    },
+	    pagination: {
+	        el: '.swiper-pagination',
+	        type: 'fraction',
+	    },
+	    navigation: {
+	        nextEl: '.swiper-button-next',
+	        prevEl: '.swiper-button-prev',
+	    },
+	});
+	
+	// 자동 재생 일시정지/재생 기능 (선택적)
+	const swiperContainer = document.querySelector('.swiper-container');
+	swiperContainer.addEventListener('mouseenter', () => {
+	    swiper.autoplay.stop();
+	});
+	swiperContainer.addEventListener('mouseleave', () => {
+	    swiper.autoplay.start();
+	});
+	
+	
+	
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+		  const body = document.body;
+		  const dropdowns = document.querySelectorAll('.dropdown');
+		  const overlay = document.createElement('div');
+		  overlay.classList.add('overlay');
+		  body.appendChild(overlay);
+
+		  dropdowns.forEach(dropdown => {
+		    dropdown.addEventListener('show.bs.dropdown', function() {
+		      overlay.style.display = 'block';
+		    });
+
+		    dropdown.addEventListener('hide.bs.dropdown', function() {
+		      overlay.style.display = 'none';
+		    });
+		  });
+
+		  // 오버레이 클릭 시 드롭다운 닫기
+		  overlay.addEventListener('click', function() {
+		    dropdowns.forEach(dropdown => {
+		      if (dropdown.classList.contains('show')) {
+		        dropdown.querySelector('.dropdown-toggle').click();
+		      }
+		    });
+		  });
+		});
+    
+</script>
 </body>
 </html>
